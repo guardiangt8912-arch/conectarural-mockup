@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConectaRural - Mockup iPhone 15 Pro Max</title>
     <style>
-        /* Estilos generales y centrado en pantalla */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,11 +21,10 @@
             padding: 20px;
         }
 
-        /* Marco exacto para iPhone 14 / 15 Pro Max: 430px x 932px */
         .phone-frame {
             width: 430px;
             height: 932px;
-            background-color: #f8fafc;
+            background-color: #ffffff;
             border-radius: 54px;
             border: 12px solid #1e293b;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
@@ -36,7 +34,6 @@
             flex-direction: column;
         }
 
-        /* Barra de estado e Isla Dinámica */
         .status-bar {
             height: 48px;
             display: flex;
@@ -60,7 +57,6 @@
             top: 10px;
         }
 
-        /* Contenedor de pantallas navegables */
         .screen-container {
             flex: 1;
             position: relative;
@@ -78,7 +74,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-            background-color: #f8fafc;
+            background-color: #ffffff;
         }
 
         .screen.hidden {
@@ -87,15 +83,179 @@
             pointer-events: none;
         }
 
-        /* PANTALLA 1: Inicio / Hero */
-        .hero-image-box {
+        .hero-banner {
             width: 100%;
             height: 340px;
             border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
             margin-top: 10px;
         }
 
-        .hero-image-box img {
-            width:
+        .hero-banner svg {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 15px;
+        }
+
+        .text-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .text-group h1 {
+            font-size: 28px;
+            color: #0f172a;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .text-group p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            padding: 14px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .form-group input {
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .home-bar {
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-indicator {
+            width: 135px;
+            height: 5px;
+            background-color: #0f172a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-frame">
+        <div class="status-bar">
+            <span>9:41</span>
+            <div class="dynamic-island"></div>
+            <span>📶 🔋</span>
+        </div>
+
+        <div class="screen-container">
+            <!-- PANTALLA 1: Inicio -->
+            <div class="screen" id="screen-home">
+                <div class="hero-banner">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10 10 0 0114.142 0M1.05 8.05a15 15 0 0121.9 0"></path>
+                    </svg>
+                    <h2>ConectaRural</h2>
+                    <p style="font-size: 13px; opacity: 0.9; margin-top: 4px;">Conectividad y Tecnología Rural</p>
+                </div>
+
+                <div class="text-group">
+                    <h1>ConectaRural</h1>
+                    <p>Soluciones tecnológicas y conectividad avanzada para entornos rurales con alta eficiencia.</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="navigateTo('screen-register')">Empezar ahora</button>
+                    <button class="btn-secondary" onclick="alert('ConectaRural ofrece soluciones de redes y servicios técnicos especializados.')">Saber más</button>
+                </div>
+            </div>
+
+            <!-- PANTALLA 2: Registro -->
+            <div class="screen hidden" id="screen-register">
+                <div>
+                    <h2 style="font-size: 24px; color: #0f172a; margin-top: 10px;">Crear Cuenta</h2>
+                    <p style="font-size: 14px; color: #64748b; margin-top: 4px;">Ingresa tus datos para conectarte.</p>
+                    
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" placeholder="Tu nombre">
+                        
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="correo@ejemplo.com">
+                        
+                        <label>Teléfono de Contacto</label>
+                        <input type="tel" placeholder="+57 300 000 0000">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="alert('¡Registro exitoso!'); navigateTo('screen-home');">Completar Registro</button>
+                    <button class="btn-secondary" onclick="navigateTo('screen-home')">Volver al Inicio</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-bar">
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(screenId) {
+            document.getElementById('screen-home').classList.add('hidden');
+            document.getElementById('screen-register').classList.add('hidden');
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
